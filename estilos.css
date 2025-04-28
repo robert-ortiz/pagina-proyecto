@@ -1,0 +1,344 @@
+body {
+  background-color: black;
+  color: rgb(10, 1, 1);
+}
+
+.contenedor-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #111;
+  color: white;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: yellow;
+  display: flex;
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+header nav a {
+  display: flex;
+  color: #b1acac;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  position: relative;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: yellow;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+      display: block;
+  }
+
+  nav.menu {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: calc(100% - 40px);
+      text-align: center;
+      padding: 10px 0;
+      gap: 15px;
+      border-radius: 10px;
+      z-index: 1000;
+  }
+
+  #menu-toggle:checked ~ nav.menu {
+      display: flex;
+  }
+
+  .contenedor-header {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+  }
+}
+
+.cuerpo {
+  text-align: center;
+  padding: 10px 10px;
+  background-color: #ada8a8;
+}
+
+.cuerpo h1 {
+  font-size: 3em;
+}
+
+.cuerpo p {
+  font-size: 1em;
+}
+
+
+/* SECCION DE EQUIPOS */
+.equipos-españa,
+.equipos-alemania,
+.equipos-inglaterra,
+.equipos-italia,
+.equipos-francia,
+.equipos-bolivia {
+  display: flex;
+  text-align: justify;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 10px;
+  background-color: #333;
+}
+
+.equipos-españa > div,
+.equipos-alemania > div,
+.equipos-inglaterra > div,
+.equipos-italia > div,
+.equipos-francia > div,
+.equipos-bolivia > div {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  color: rgb(224, 226, 98);
+}
+
+.equipos-españa > div:hover,
+.equipos-alemania > div:hover,
+.equipos-inglaterra > div:hover,
+.equipos-italia > div:hover,
+.equipos-francia > div:hover,
+.equipos-bolivia > div:hover {
+  transform: scale(1.05);
+}
+
+.equipos-españa img,
+.equipos-alemania img,
+.equipos-inglaterra img,
+.equipos-italia img,
+.equipos-francia img,
+.equipos-bolivia img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .equipos-españa > div,
+  .equipos-alemania > div,
+  .equipos-inglaterra > div,
+  .equipos-italia > div,
+  .equipos-francia > div,
+  .equipos-bolivia > div {
+      width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipos-españa > div,
+  .equipos-alemania > div,
+  .equipos-inglaterra > div,
+  .equipos-italia > div,
+  .equipos-francia > div,
+  .equipos-bolivia > div {
+      width: 100%; 
+  }
+}
+
+/* SECCION DE INICIO*/
+.campeon-mundial,
+.fundador-futbol,
+.champions-league {
+  text-align: justify;
+  margin: 80px auto;
+  color: rgb(19, 19, 16);
+  width: 70%;
+  background-color: #c4baba;
+  padding: 20px;
+}
+
+.campeon-mundial img,
+.fundador-futbol img,
+.champions-league img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 15px;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .campeon-mundial,
+  .fundador-futbol,
+  .champions-league {
+      width: 90%;
+  }
+}
+
+.dropdown-contenedor {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  padding: 10px 0;
+  min-width: 150px;
+  border-radius: 8px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.dropdown a {
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.dropdown a:hover {
+  background-color: #333;
+  color: yellow;
+}
+
+.dropdown-contenedor:hover .dropdown {
+  display: flex;
+}
+
+.video-contenedor {
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-contenedor video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-contenedor video {
+      height: 320px;
+  }
+}
+
+
+/* SECCION DE NOTICIAS */
+.noticias {
+  padding: 60px 20px;
+}
+
+.noticia {
+  background-color: rgb(94, 87, 87);
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.noticia img {
+  width: 50%;
+  height: 600px;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noticia h2 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.noticia p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 50px;
+  font-family: Arial;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.footer-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.footer-columna {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+
+.footer-columna h4 {
+  margin-bottom: 15px;
+  color: #f39c12; 
+}
+
+.footer-columna p {
+  color: #ccc; 
+  line-height: 1.5;
+}
+
+.footer-autor {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+  font-size: 12px;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-columna {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
